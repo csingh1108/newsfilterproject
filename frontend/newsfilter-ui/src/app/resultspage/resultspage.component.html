@@ -1,0 +1,65 @@
+<header class="header">
+  <div class="header__title-container">
+    <h1 class="header__title" (click)="goToHome()">News Aggregator</h1>
+  </div>
+  <div class="top_search">
+  <app-search-bar class="search-bar-container"></app-search-bar>
+  <button class="options_button" (click)="showOptions()">
+    <p class="options_button_text">Filter Options</p>
+  </button>
+  </div>
+  <div class="filter-section" *ngIf="areOptionsVisible">
+    <div class="filter-section__item">
+      <mat-form-field class="date-picker">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker" [dateFilter]="myFilter">
+          <input [(ngModel)]="dateFrom" matStartDate placeholder="Start date">
+          <input [(ngModel)]="dateTo" matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <button class="clear-button" (click)="clearDateSelection()">
+        <p class="clear-text">Clear</p>
+      </button>
+    </div>
+    <div class="filter-section__item">
+      <mat-form-field class="sorting-option">
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option value="relevancy">Relevance</mat-option>
+          <mat-option value="popularity">Popularity</mat-option>
+          <mat-option value="publishedAt">Newest</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</header>
+
+
+<div class="news-container">
+  <div class="test" *ngFor="let item of newsDto">
+    <mat-card class="news-card" >
+      <mat-card-header>
+        <div class="news-details">
+          <h3 class="news-name">{{item.name}}</h3>
+        </div>
+        <mat-card-title class="news-title">{{item.title}}</mat-card-title>
+      </mat-card-header>
+      <div class="news-image-container">
+        <img mat-card-image class="news-image" *ngIf="item.urlToImage" [src]="item.urlToImage" alt="News image">
+      </div>
+      <mat-card-subtitle class="news-description">{{item.description}}</mat-card-subtitle>
+      <mat-card-content class="news-content">
+        <p>{{item.content}}</p>
+        <a class="news-url" href="{{item.url}}">Read more</a>
+      </mat-card-content>
+      <span class="news-published">Published on: {{item.publishedAt}}</span>
+      <mat-card-actions class="news-actions">
+        <button mat-button class="like-button">LIKE</button>
+        <button mat-button class="share-button">SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

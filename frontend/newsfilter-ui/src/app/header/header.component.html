@@ -1,0 +1,17 @@
+<header class="header">
+  <div class="header__title-container">
+    <h1 class="header__title">News Aggregator</h1>
+  </div>
+  <div class="header__chips-container">
+    <mat-chip-listbox aria-label="News selection">
+      <mat-chip-option (click)="goToGeneral()" >Top Stories</mat-chip-option>
+      <mat-chip-option (click)="goToBusiness()">Business</mat-chip-option>
+      <mat-chip-option (click)="goToEntertainment()">Entertainment</mat-chip-option>
+      <mat-chip-option (click)="goToHealth()">Health</mat-chip-option>
+      <mat-chip-option (click)="goToScience()">Science</mat-chip-option>
+      <mat-chip-option (click)="goToSports()">Sports</mat-chip-option>
+      <mat-chip-option (click)="goToTech()">Tech</mat-chip-option>
+    </mat-chip-listbox>
+    <button mat-icon-button (click)="goToSearch()" class="header__search-button">
+      <mat-icon class="search_icon">search</mat-icon> </button> </div>
+</header>

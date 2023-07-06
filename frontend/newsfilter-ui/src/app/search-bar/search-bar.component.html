@@ -1,0 +1,12 @@
+    <div class="search-container">
+      <mat-form-field appearance="fill" class="search-bar">
+        <input matInput placeholder="Search..." [(ngModel)]="searchValue"
+               (keyup.enter)="executeSearch()">
+      </mat-form-field>
+      <button mat-icon-button class="search-icon-button"(click)="executeSearch()">
+        <mat-icon class="search-icon">search</mat-icon>
+      </button>
+      <button mat-icon-button class="close-icon-button" (click)="clearSearch() ">
+        <mat-icon class="search-icon">close</mat-icon>
+      </button>
+    </div>

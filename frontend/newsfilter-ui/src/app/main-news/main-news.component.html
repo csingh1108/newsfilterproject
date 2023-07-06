@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="news-container">
+  <div class="test" *ngFor="let item of newsDto">
+    <mat-card class="news-card" >
+      <mat-card-header>
+        <div class="news-details">
+          <h3 class="news-name">{{item.name}}</h3>
+        </div>
+        <mat-card-title class="news-title">{{item.title}}</mat-card-title>
+      </mat-card-header>
+      <div class="news-image-container">
+        <img mat-card-image class="news-image" *ngIf="item.urlToImage" [src]="item.urlToImage" alt="News image">
+      </div>
+      <mat-card-subtitle class="news-description">{{item.description}}</mat-card-subtitle>
+      <mat-card-content class="news-content">
+        <p>{{item.content}}</p>
+        <a class="news-url" href="{{item.url}}">Read more</a>
+      </mat-card-content>
+      <span class="news-published">Published on: {{item.publishedAt}}</span>
+      <mat-card-actions class="news-actions">
+        <button mat-button class="like-button">LIKE</button>
+        <button mat-button class="share-button">SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+

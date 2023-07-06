@@ -1,0 +1,30 @@
+.search-container{
+  padding-left: 10px;
+  display: flex;
+}
+
+.search-icon{
+  font-size: 24px;
+}
+
+.search-icon-button{
+  width: 48px;
+  height: 42px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-form-field{
+  width:450px;
+  height: 70px;
+}
+
+.close-icon-button{
+  margin-bottom: 22px;
+}
+
+.close-icon-button:hover{
+  background-color: #f44336;
+}
