@@ -15,10 +15,9 @@ export class MainNewsComponent implements OnInit{
   data: string;
 
   constructor(private newsService: NewsServiceService, private navService:NavigationService) {
-
   }
 
-
+  //Listens for changes in category and calls backend API to get news
   ngOnInit(): void {
     this.navService.valueTransfer$.subscribe((data) => {
       this.data= data;
@@ -26,6 +25,7 @@ export class MainNewsComponent implements OnInit{
       })
   }
 
+  //method calls newsService to get news from API backend
   updateNews(category: string) {
     this.newsService.getNews(category)
       .subscribe(response => {

@@ -6,6 +6,7 @@ import {BehaviorSubject, Observable} from "rxjs";
 })
 export class NavigationService {
 
+  //Used to transfer category value between components
   valueTransfer$: Observable<any>;
   private valueTransferSubject = new BehaviorSubject<string>('general');
 

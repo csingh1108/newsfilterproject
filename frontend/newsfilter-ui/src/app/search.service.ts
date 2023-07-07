@@ -6,6 +6,7 @@ import { Observable, Subject} from "rxjs";
 })
 export class SearchService {
 
+  // Used to transfer search value between components
   valueTransfer$: Observable<any>;
   private valueTransferSubject = new Subject<string>();
 

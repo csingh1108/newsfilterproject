@@ -16,7 +16,6 @@ public class ArticleApiResponse {
     private String description;
     private String url;
     private String publishedAt;
-    // Other fields as needed
 
     // Custom getter for source name to handle null values
     public String getSourceName() {

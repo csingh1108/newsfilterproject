@@ -62,6 +62,7 @@ export class ResultspageComponent implements OnInit {
     return daysDiff >= 1 && daysDiff <= 30;
   };
 
+  //Clear date selection
   clearDateSelection(){
     this.dateFrom = '';
     this.dateTo = '';

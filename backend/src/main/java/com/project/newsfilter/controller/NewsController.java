@@ -15,12 +15,14 @@ public class NewsController {
 
     private final NewsService newsService;
 
+    //Api endpoint for top headlines, optionally filtered by source name
     @GetMapping("/headlines")
     @ResponseStatus(HttpStatus.OK)
     public List<NewsDTO> getAllNews(@RequestParam(required = false) String sourceName){
         return newsService.getAllNews(sourceName);
     }
 
+    //Api endpoint for searches, filters are search term, optionally dates from and to and sort by
     @GetMapping("/search")
     @ResponseStatus(HttpStatus.OK)
     public List<NewsDTO> getNewsResults(@RequestParam String searchName, @RequestParam(required = false) String oldestDate,

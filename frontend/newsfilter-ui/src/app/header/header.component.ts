@@ -16,6 +16,7 @@ export class HeaderComponent {
   public constructor(private navService: NavigationService, private router: Router) {
   }
 
+  // basic navigation functions
   goToGeneral() {
     this.category= "general";
     this.navService.valueTransfer(this.category)

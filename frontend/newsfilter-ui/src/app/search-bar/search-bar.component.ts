@@ -16,6 +16,7 @@ export class SearchBarComponent {
   constructor(private searchService: SearchService, private router: Router){
   }
 
+  //Navigate to results page and pass search value
   executeSearch()
     {
       if(this.searchValue != ""){
