@@ -1,12 +1,12 @@
 package com.project.newsfilter.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Map;
 
-@Getter
-@Setter
+@Data
 public class ArticleApiResponse {
     private Object source; // Object type to capture the nested source JSON object
     private String author;

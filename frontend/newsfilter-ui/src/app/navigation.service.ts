@@ -18,4 +18,5 @@ export class NavigationService {
   valueTransfer(data) {
     this.valueTransferSubject.next(data);
   }
+
 }

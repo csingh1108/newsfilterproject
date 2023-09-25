@@ -27,10 +27,6 @@ public class NewsService {
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
 
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
 
     // Method calls newsapi.org API to get top headlines, data is returned as a JSON object and mapped to NewsDTO
     public List<NewsDTO> getAllNews(String sourceName) {
@@ -66,8 +62,7 @@ public class NewsService {
     private String formatDate(String date) {
         ZonedDateTime zonedDateTime = ZonedDateTime.parse(date);
         LocalDateTime localDateTime = zonedDateTime.toLocalDateTime();
-        String formattedPublishedDate = localDateTime.format(DateTimeFormatter.ofPattern("MM-dd-yyyy"));
-        return formattedPublishedDate;
+        return localDateTime.format(DateTimeFormatter.ofPattern("MM-dd-yyyy"));
     }
 
     //Method strips out the name of the org from the title
